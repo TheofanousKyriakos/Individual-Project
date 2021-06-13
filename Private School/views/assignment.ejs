@@ -1,0 +1,45 @@
+<%- include("partials/header"); -%>
+    <h1><%= title %></h1>
+<table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">SubDate</th>
+                    <th scope="col">Oral Mark</th>
+                    <th scope="col">Total Mark</th>
+                    <th width="200px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% for(var i = 0; i < assignment.length; i++) { %>
+                <tr>
+                    <th scope="row"><%= (i+1) %></th>
+                    <td><%= assignment[i].title%></td>
+                    <td><%= assignment[i].descr%></td>
+                    <td><%= assignment[i].subdate.toLocaleString()%></td>
+                    <td><%= assignment[i].ormark%></td>
+                    <td><%= assignment[i].tmark%></td>
+                    <td>
+                        <a class="btn btn-success edit" href="<%= url + '/edit/assignment/' + assignment[i].aid %>">Edit</a>                       
+                        <button class="btn btn-danger delete" onclick="deleteAssignment ('<%= url %>' + '/delete/assignment/' + '<%= assignment[i].aid %>')"> Delete</button>                       
+                   </td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+    <div id="error"><%= message %></div>
+    <script>
+    function deleteAssignment(url) {
+        console.log(url);
+      var dialog = confirm("Are you sure you want to delete this assignment?");
+      if(dialog) {
+        window.location.replace(url);
+        
+      } else alert("The assignment is safe for now!!!");
+       
+    }
+  </script>
+<%- include("partials/footer"); -%>
+

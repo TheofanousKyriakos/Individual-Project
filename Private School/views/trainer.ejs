@@ -1,0 +1,41 @@
+<%- include("partials/header"); -%>
+    <h1><%= title %></h1>
+    <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Subject</th>
+                    <th width="200px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% for(var i = 0; i < trainer.length; i++) { %>
+                <tr>
+                    <th scope="row"><%= (i+1) %></th>
+                    <td><%= trainer[i].tfname%></td>
+                    <td><%= trainer[i].tlname%></td>
+                    <td><%= trainer[i].tsubject%></td>
+                    <td>
+                        <a class="btn btn-success edit" href="<%= url + '/edit/trainer/' + trainer[i].tid %>">Edit</a>                       
+                        <button class="btn btn-danger delete" onclick="deleteTrainer ('<%= url %>' + '/delete/trainer/' + '<%= trainer[i].tid %>')"> Delete</button>                       
+                   </td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+    <div id="error"><%= message %></div>
+    <script>
+    function deleteTrainer(url) {
+        console.log(url);
+      var dialog = confirm("Are you sure you want to delete this trainer?");
+      if(dialog) {
+        window.location.replace(url);
+        
+      } else alert("The trainer is safe for now!!!");
+       
+    }
+  </script>
+<%- include("partials/footer"); -%>
+

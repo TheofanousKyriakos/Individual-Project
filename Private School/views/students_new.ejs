@@ -1,0 +1,13 @@
+<%- include("partials/header"); -%>
+    <h1><%= title %></h1>
+    <form  action="" method="post">
+      <div class="form-group">
+        First Name: <input class="form-control" type="text" name="sfname">
+        Last Name: <input class="form-control" type="text" name="slname">
+        Date of Birth: <input class="form-control" type="date" name="sdob">
+        Tuition Fees: <input class="form-control" type="text" name="tfees"><br>
+        <button class="btn btn-dark" type="submit">Add new Student</button>
+        </div>
+    </form>
+    <div id="message"><%= message %></div>
+<%- include("partials/footer"); -%>

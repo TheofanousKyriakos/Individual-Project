@@ -1,0 +1,15 @@
+
+<%- include("partials/header"); -%>
+    <h1><%= title %></h1>
+    <form  action="/student/update" method="post">
+      <div class="form-group">
+        Id: <input class="form-control" type="text" name="sid" value="<%= student.sid %>">
+        First Name: <input class="form-control" type="text" name="sfname" value="<%= student.sfname %>">
+        Last Name: <input class="form-control" type="text" name="slname" value="<%= student.slname %>">
+        Date of Birth: <input class="form-control" type="date" name="sdob" value="<%= student.sdob %>">
+        Tuition Fees: <input class="form-control" type="text" name="tfees" value="<%= student.tfees %>"><br>
+        <button class="btn btn-dark" type="submit">Edit Student</button>
+        </div>
+    </form>
+    <div id="message"><%= message %></div>
+<%- include("partials/footer"); -%>

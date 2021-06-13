@@ -1,0 +1,15 @@
+<%- include("partials/header"); -%>
+    <h1><%= title %></h1>
+    <form  action="/course/update" method="post">
+      <div class="form-group">
+        Id: <input class="form-control" type="text" name="cid" value="<%= course.cid %>">
+        Title: <input class="form-control" type="text" name="ctitle" value="<%= course.ctitle %>">
+        Stream: <input class="form-control" type="text" name="cstream" value="<%= course.cstream %>">
+        Type: <input class="form-control" type="text" name="ctype" value="<%= course.ctype %>">
+        Start Date: <input class="form-control" type="date" name="sdate" value="<%= course.sdate %>"> 
+        End Date: <input class="form-control" type="date" name="edate" value="<%= course.edate %>"><br>
+        <button class="btn btn-dark" type="submit">Edit Course</button>
+        </div>
+    </form>
+    <div id="message"><%= message %></div>
+<%- include("partials/footer"); -%>

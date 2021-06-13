@@ -1,0 +1,15 @@
+<%- include("partials/header"); -%>
+    <h1><%= title %></h1>
+    <form  action="/assignment/update" method="post">
+      <div class="form-group">
+        Id: <input class="form-control" type="text" name="aid" value="<%= assignment.aid %>">
+        Title: <input class="form-control" type="text" name="title" value="<%= assignment.title %>">
+        Description: <input class="form-control" type="text" name="descr" value="<%= assignment.descr %>">
+        SubDate: <input class="form-control" type="date" name="subdate" value="<%= assignment.subdate %>">
+        Oral Mark : <input class="form-control" type="text" name="ormark" value="<%= assignment.ormark %>">
+        Total Mark: <input class="form-control" type="text" name="tmark" value="<%= assignment.tmark %>"><br>
+        <button class="btn btn-dark" type="submit">Edit Assignment</button>
+        </div>
+    </form>
+    <div id="message"><%= message %></div>
+<%- include("partials/footer"); -%>

@@ -1,0 +1,13 @@
+<%- include("partials/header"); -%>
+    <h1><%= title %></h1>
+    <form action="/trainer/update" method="post">
+      <div class="form-group">
+        Id: <input class="form-control" type="text" name="tid" value="<%= trainer.tid %>">
+        First Name: <input class="form-control" type="text" name="tfname" value="<%= trainer.tfname %>">
+        Last Name: <input class="form-control" type="text" name="tlname" value="<%= trainer.tlname %>">
+        Subject: <input class="form-control" type="text" name="tsubject" value="<%= trainer.tsubject %>"><br>
+        <button class="btn btn-dark" type="submit">Edit trainer</button>
+        </div>
+    </form>
+    <div id="message"><%= message %></div>
+<%- include("partials/footer"); -%>

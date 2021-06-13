@@ -1,0 +1,14 @@
+<%- include("partials/header"); -%>
+    <h1><%= title %></h1>
+    <form  action="" method="post">
+      <div class="form-group">
+        Title: <input class="form-control" type="text" name="ctitle">
+        Stream: <input class="form-control" type="text" name="cstream">
+        Type: <input class="form-control" type="text" name="ctype">
+        Start Date: <input class="form-control" type="date" name="sdate">
+        End Date: <input class="form-control" type="date" name="edate"><br>
+        <button class="btn btn-dark" type="submit">Add new Course</button>
+        </div>
+    </form>
+    <div id="message"><%= message %></div>
+<%- include("partials/footer"); -%>

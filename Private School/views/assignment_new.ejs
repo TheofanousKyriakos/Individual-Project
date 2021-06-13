@@ -1,0 +1,14 @@
+<%- include("partials/header"); -%>
+    <h1><%= title %></h1>
+    <form  action="" method="post">
+      <div class="form-group">
+        Title: <input class="form-control" type="text" name="title">
+        Description: <input class="form-control" type="text" name="descr">
+        SubDate: <input class="form-control" type="date" name="subdate">
+        Oral Mark : <input class="form-control" type="text" name="ormark">
+        Total Mark: <input class="form-control" type="text" name="tmark"><br>
+        <button class="btn btn-dark" type="submit">Add new Assignment</button>
+        </div>
+    </form>
+    <div id="message"><%= message %></div>
+<%- include("partials/footer"); -%>

@@ -1,0 +1,46 @@
+<%- include("partials/header"); -%>
+    <h1><%= title %></h1>
+<table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Stream</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">End Date</th>
+                    <th width="200px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% for(var i = 0; i < course.length; i++) { %>
+                <tr>
+                    <th scope="row"><%= (i+1) %></th>
+                    <td><%= course[i].ctitle%></td>
+                    <td><%= course[i].cstream%></td>
+                    <td><%= course[i].ctype%></td>
+                    <td><%= course[i].sdate.toLocaleString()%></td>
+                    <td><%= course[i].edate.toLocaleString()%></td>
+                    <td>
+                        <a class="btn btn-success edit" href="<%= url + '/edit/course/' + course[i].cid %>">Edit</a>                       
+                        <button class="btn btn-danger delete" onclick="deleteCourse ('<%= url %>' + '/delete/course/' + '<%= course[i].cid %>')"> Delete</button>                       
+                   </td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+    <div id="error"><%= message %></div>
+    <script>
+    function deleteCourse(url) {
+        console.log(url);
+      var dialog = confirm("Are you sure you want to delete this course?");
+      if(dialog) {
+        window.location.replace(url);
+        
+      } else alert("The course is safe for now!!!");
+       
+    }
+  </script>
+<%- include("partials/footer"); -%>
+
+        
